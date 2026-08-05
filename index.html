@@ -1,1 +1,1035 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mariana Nacashima — Portfólio 2026</title>
+<meta name="description" content="Portfólio de Mariana Nacashima — Jornalismo, Fotografia, Social Media e Identidade Visual.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1e3a5f;
+    --navy-deep:#142842;
+    --navy-card:#1f3757;
+    --ink:#2b3a4f;
+    --paper:#eeece5;
+    --paper-2:#e5e2d8;
+    --paper-3:#f6f5f0;
+    --yellow:#fee400;
+    --muted:#7c8ba1;
+    --line: rgba(30,58,95,0.14);
+    --serif:'Playfair Display', serif;
+    --sans:'Poppins', sans-serif;
+  }
 
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-weight:300;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:radial-gradient(rgba(30,58,95,0.045) 1px, transparent 1px);
+    background-size:3px 3px;
+    pointer-events:none;
+    z-index:0;
+  }
+
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+
+  .wrap{
+    max-width:1220px;
+    margin:0 auto;
+    padding:0 40px;
+  }
+
+  h1,h2,h3,h4{
+    font-family:var(--serif);
+    color:var(--navy);
+    font-weight:700;
+    line-height:1.05;
+  }
+
+  .eyebrow{
+    font-size:0.78rem;
+    letter-spacing:0.06em;
+    color:var(--muted);
+    font-weight:400;
+  }
+  .eyebrow::before, .eyebrow::after{content:"["}
+  .eyebrow::after{content:"]"}
+  .eyebrow.no-brackets::before,.eyebrow.no-brackets::after{content:none}
+
+  /* ============ NAV ============ */
+  header.nav{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:100;
+    background:rgba(238,236,229,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+    transition:transform .4s ease;
+  }
+  .nav-inner{
+    max-width:1220px;
+    margin:0 auto;
+    padding:16px 40px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .nav-mono{
+    font-family:var(--serif);
+    font-weight:700;
+    font-style:italic;
+    font-size:1.3rem;
+    color:var(--navy);
+  }
+  .nav-links{
+    display:flex;
+    gap:34px;
+    font-size:0.86rem;
+    letter-spacing:0.02em;
+  }
+  .nav-links a{
+    position:relative;
+    padding-bottom:4px;
+  }
+  .nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0; bottom:0;
+    width:0%; height:1px;
+    background:var(--navy);
+    transition:width .3s ease;
+  }
+  .nav-links a:hover::after{width:100%;}
+  .nav-cta{
+    font-size:0.8rem;
+    border:1px solid var(--navy);
+    padding:8px 18px;
+    border-radius:30px;
+    transition:background .25s ease, color .25s ease;
+  }
+  .nav-cta:hover{background:var(--navy);color:var(--paper-3);}
+  .burger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:6px;}
+  .burger span{width:22px;height:2px;background:var(--navy);display:block;}
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:120px 0 60px;
+  }
+  .hero .wrap{width:100%;}
+  .hero-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:26px;
+    font-size:0.85rem;
+  }
+  .badge-year{
+    border:1px solid var(--navy);
+    border-radius:30px;
+    padding:6px 20px;
+    color:var(--navy);
+    letter-spacing:0.04em;
+  }
+  .hero-name{
+    color:var(--navy);
+    font-size:0.95rem;
+  }
+  .hero-name b{font-weight:700;}
+  h1.hero-title{
+    font-size:clamp(3.4rem, 11vw, 9.5rem);
+    letter-spacing:-0.01em;
+    color:var(--navy);
+    animation:riseIn 1s cubic-bezier(.16,.84,.44,1) both;
+  }
+  @keyframes riseIn{
+    from{opacity:0; transform:translateY(24px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+  .hero-tags{
+    margin-top:28px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px 34px;
+    font-size:1rem;
+    color:var(--navy);
+  }
+  .hero-tags span{display:inline-flex;align-items:center;gap:8px;}
+  .hero-tags span::before{content:"↗";font-size:0.85em;}
+  .hero-scroll{
+    position:absolute;
+    bottom:36px;
+    left:40px;
+    font-size:0.75rem;
+    color:var(--muted);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .hero-scroll .line{width:40px;height:1px;background:var(--muted);display:inline-block;animation:pulseLine 2s ease-in-out infinite;}
+  @keyframes pulseLine{0%,100%{opacity:.3} 50%{opacity:1}}
+
+  /* dots */
+  .dots{display:flex;gap:7px;margin-bottom:22px;}
+  .dots span{width:7px;height:7px;border-radius:50%;background:var(--navy);opacity:.85;}
+  .dots span:nth-child(2){opacity:.55}
+  .dots span:nth-child(3){opacity:.3}
+
+  /* ============ SECTION GENERIC ============ */
+  section{
+    position:relative;
+    padding:120px 0;
+    z-index:1;
+  }
+  .section-head{
+    margin-bottom:64px;
+  }
+  .section-num{
+    font-family:var(--serif);
+    font-style:italic;
+    color:var(--muted);
+    font-size:1.1rem;
+    display:block;
+    margin-bottom:4px;
+  }
+  .section-title{
+    font-size:clamp(2.4rem,6vw,4.2rem);
+    font-style:italic;
+  }
+  .section-sub{
+    margin-top:14px;
+    color:var(--muted);
+    font-size:0.95rem;
+    max-width:560px;
+  }
+
+  /* ============ SOBRE ============ */
+  #sobre{padding-top:100px;}
+  .sobre-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+  }
+  .sobre-block + .sobre-block{margin-top:56px;}
+  .sobre-block h3{
+    font-style:italic;
+    font-size:2rem;
+    margin-bottom:18px;
+  }
+  .lede{font-weight:600;color:var(--navy);margin-bottom:10px;font-size:1.02rem;}
+  .body-text{font-size:0.96rem;color:var(--ink);opacity:0.88;}
+  .contact-list{margin-top:20px;display:flex;flex-direction:column;gap:8px;font-size:0.92rem;}
+  .contact-list a{border-bottom:1px solid transparent;transition:border-color .2s;}
+  .contact-list a:hover{border-color:var(--navy);}
+
+  .edu-item, .exp-item{margin-bottom:22px;}
+  .edu-item .role, .exp-item .role{font-weight:600;color:var(--navy);font-size:1rem;margin:2px 0;}
+  .edu-item .meta, .exp-item .meta{font-size:0.85rem;color:var(--muted);}
+
+  .skills{margin-top:40px;}
+  .skill-row{display:grid;grid-template-columns:140px 1fr;align-items:center;gap:16px;margin-bottom:12px;font-size:0.85rem;}
+  .skill-track{height:9px;background:var(--paper-2);border-radius:20px;overflow:hidden;}
+  .skill-fill{height:100%;background:var(--navy);border-radius:20px;transform:scaleX(0);transform-origin:left;transition:transform 1.1s cubic-bezier(.16,.84,.44,1);}
+  .skill-row.in-view .skill-fill{transform:scaleX(1);}
+
+  .profile-photo{
+    margin-top:48px;
+    display:flex;
+    justify-content:flex-end;
+  }
+  .profile-photo img{
+    width:230px;
+    filter:drop-shadow(0 18px 30px rgba(20,40,66,0.18));
+  }
+
+  /* ============ LOGOFOLIO ============ */
+  .logo-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .logo-card{
+    background:var(--paper);
+    padding:46px 34px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    transition:background .3s ease;
+  }
+  .logo-card:hover{background:var(--paper-3);}
+  .logo-card img{
+    max-height:120px;
+    width:auto;
+    object-fit:contain;
+    margin-bottom:26px;
+  }
+  .logo-card .cat{margin-bottom:8px;}
+  .logo-card .name{font-weight:600;color:var(--navy);font-size:0.98rem;margin-bottom:6px;}
+  .logo-card .desc{font-size:0.82rem;color:var(--muted);}
+
+  /* ============ PROJECT CARDS (social + texto) ============ */
+  .project{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:70px;
+    align-items:center;
+    padding:70px 0;
+    border-top:1px solid var(--line);
+  }
+  .project:first-of-type{border-top:none;}
+  .project.reverse{grid-template-columns:0.95fr 1.05fr;}
+  .project.reverse .project-media{order:2;}
+  .project.reverse .project-text{order:1;}
+  .project-media img{
+    border-radius:4px;
+    box-shadow:0 30px 60px -20px rgba(20,40,66,0.28);
+  }
+  .project-media.plain img{box-shadow:none;border-radius:2px;}
+  .project-text .cat{margin-bottom:14px;}
+  .project-text h3{
+    font-size:clamp(1.6rem,3vw,2.3rem);
+    font-style:italic;
+    margin-bottom:20px;
+  }
+  .project-text .about-label{
+    font-size:0.75rem;
+    color:var(--muted);
+    margin-bottom:6px;
+    letter-spacing:0.04em;
+  }
+  .project-text p{font-size:0.92rem;color:var(--ink);opacity:0.9;margin-bottom:16px;}
+  .project-text p b{color:var(--navy);font-weight:600;opacity:1;}
+  .project-meta{
+    display:flex;
+    gap:40px;
+    margin-top:26px;
+    flex-wrap:wrap;
+  }
+  .project-meta div{font-size:0.82rem;}
+  .project-meta .k{color:var(--muted);margin-bottom:4px;}
+  .project-meta .v{color:var(--navy);font-weight:600;}
+  .results{
+    margin-top:22px;
+    display:flex;
+    gap:28px;
+    flex-wrap:wrap;
+  }
+  .results div{text-align:left;}
+  .results .num{font-family:var(--serif);font-weight:700;color:var(--navy);font-size:1.3rem;display:block;}
+  .results .lbl{font-size:0.72rem;color:var(--muted);}
+  .btn-link{
+    margin-top:26px;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-size:0.85rem;
+    font-weight:500;
+    color:var(--navy);
+    border-bottom:1px solid var(--navy);
+    padding-bottom:3px;
+    transition:gap .25s ease, opacity .2s ease;
+  }
+  .btn-link:hover{gap:16px;}
+  .btn-link::after{content:"→";}
+
+  /* ============ FOTOGRAFIA ============ */
+  .photo-set{margin-bottom:100px;}
+  .photo-set:last-child{margin-bottom:0;}
+  .photo-set-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    margin-bottom:26px;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .photo-set-head h3{
+    font-size:1.7rem;
+    font-style:italic;
+  }
+  .photo-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+  }
+  .photo-grid img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    aspect-ratio:3/4;
+    border-radius:2px;
+    cursor:zoom-in;
+    transition:transform .5s cubic-bezier(.16,.84,.44,1), filter .4s ease;
+  }
+  .photo-grid img:hover{transform:scale(1.015);filter:brightness(1.03);}
+  .photo-grid .wide{grid-column:span 2;aspect-ratio:16/10.6;}
+  .photo-grid .square{aspect-ratio:1/1;}
+
+  /* ============ FOOTER ============ */
+  footer{
+    position:relative;
+    padding:150px 0 60px;
+    text-align:center;
+    overflow:hidden;
+  }
+  footer h2{
+    font-size:clamp(3rem,10vw,6.5rem);
+    font-style:italic;
+  }
+  footer .sub{
+    margin-top:10px;
+    color:var(--muted);
+    font-size:1rem;
+  }
+  .footer-links{
+    margin-top:50px;
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+    font-size:0.9rem;
+  }
+  .footer-links a{
+    border-bottom:1px solid var(--line);
+    padding-bottom:4px;
+    transition:border-color .2s ease;
+  }
+  .footer-links a:hover{border-color:var(--navy);}
+  .footer-photo{
+    margin-top:60px;
+    display:flex;
+    justify-content:center;
+  }
+  .footer-photo img{width:150px;filter:drop-shadow(0 14px 24px rgba(20,40,66,0.2));}
+  .footer-credit{
+    margin-top:70px;
+    font-size:0.72rem;
+    color:var(--muted);
+    letter-spacing:0.02em;
+  }
+
+  /* ============ LIGHTBOX ============ */
+  .lightbox{
+    position:fixed;inset:0;background:rgba(20,32,50,0.92);
+    display:flex;align-items:center;justify-content:center;
+    z-index:1000;opacity:0;pointer-events:none;transition:opacity .3s ease;
+    padding:40px;
+  }
+  .lightbox.active{opacity:1;pointer-events:auto;}
+  .lightbox img{max-width:90vw;max-height:88vh;border-radius:4px;box-shadow:0 30px 80px rgba(0,0,0,0.5);}
+  .lightbox-close{position:absolute;top:28px;right:40px;color:#fff;font-size:2rem;cursor:pointer;font-family:var(--serif);}
+
+  /* ============ REVEAL ============ */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.16,.84,.44,1), transform .8s cubic-bezier(.16,.84,.44,1);}
+  .reveal.in-view{opacity:1;transform:translateY(0);}
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width:980px){
+    .wrap{padding:0 26px;}
+    .nav-links{display:none;}
+    .nav-cta{display:none;}
+    .burger{display:flex;}
+    .sobre-grid{grid-template-columns:1fr;gap:10px;}
+    .logo-grid{grid-template-columns:repeat(2,1fr);}
+    .project, .project.reverse{grid-template-columns:1fr;gap:34px;}
+    .project.reverse .project-media{order:1;}
+    .project.reverse .project-text{order:2;}
+    .photo-grid{grid-template-columns:repeat(2,1fr);}
+    .photo-grid .wide{grid-column:span 2;}
+    .profile-photo{justify-content:center;}
+    section{padding:80px 0;}
+  }
+  @media (max-width:560px){
+    .hero-top{flex-direction:column;gap:14px;}
+    .logo-grid{grid-template-columns:1fr;}
+    .photo-grid{grid-template-columns:repeat(2,1fr);}
+    .results{gap:20px;}
+    .project-meta{gap:24px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="lightboxClose">×</span>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-mono">M. Nacashima</a>
+    <nav class="nav-links">
+      <a href="#sobre">sobre</a>
+      <a href="#logofolio">logofolio</a>
+      <a href="#social">social media</a>
+      <a href="#texto">texto &amp; roteiro</a>
+      <a href="#fotografia">fotografia</a>
+    </nav>
+    <a class="nav-cta" href="mailto:marinacashima@outlook.com">vamos conversar</a>
+    <button class="burger" id="burger"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-top">
+        <span class="badge-year">2026</span>
+        <span class="hero-name">[ <b>Mariana Nacashima</b> ]</span>
+      </div>
+      <h1 class="hero-title">Portfolio</h1>
+      <div class="hero-tags">
+        <span>Jornalismo</span>
+        <span>Fotografia</span>
+        <span>Social Media</span>
+        <span>Identidade Visual</span>
+      </div>
+    </div>
+    <div class="hero-scroll"><span class="line"></span> role para explorar</div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre">
+    <div class="wrap">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <div class="sobre-grid">
+        <div>
+          <div class="sobre-block reveal">
+            <h3>sobre mim</h3>
+            <p class="lede">oi, prazer, Mariana Nacashima! :)</p>
+            <p class="body-text">sou jornalista em formação pela USJT-SP, apaixonada por comunicação, com foco em narrativas visuais, produção de textos, fotografia e redes sociais.</p>
+            <div class="contact-list">
+              <a href="mailto:marinacashima@outlook.com">✉ marinacashima@outlook.com</a>
+              <a href="https://www.linkedin.com/in/mariana-nacashima" target="_blank" rel="noopener">⚭ linkedin.com/in/mariana-nacashima</a>
+            </div>
+          </div>
+
+          <div class="sobre-block reveal">
+            <h3>educação</h3>
+            <div class="edu-item">
+              <span class="eyebrow">graduação - bacharelado</span>
+              <p class="role">Jornalismo</p>
+              <p class="meta">Universidade São Judas Tadeu (USJT-SP) · jan. 2023 – dez. 2026</p>
+            </div>
+            <div class="edu-item">
+              <span class="eyebrow">curso</span>
+              <p class="role">Design UX/UI</p>
+              <p class="meta">Apple Training Center · julho 2024</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="sobre-block reveal">
+            <h3>experiência</h3>
+            <div class="exp-item">
+              <span class="eyebrow">estagiária de Jornalismo</span>
+              <p class="role">Prefeitura Municipal de Santa Isabel</p>
+              <p class="meta">fev. 2025 – presente</p>
+            </div>
+            <div class="exp-item">
+              <span class="eyebrow">voluntária - líder em comunicação</span>
+              <p class="role">Igreja Adventista do Sétimo Dia</p>
+              <p class="meta">jan. 2022 – presente</p>
+            </div>
+          </div>
+
+          <div class="sobre-block reveal">
+            <h3>skills</h3>
+            <div class="skills">
+              <div class="skill-row" data-w="96"><span>Pacote Office</span><div class="skill-track"><div class="skill-fill"></div></div></div>
+              <div class="skill-row" data-w="96"><span>Canva</span><div class="skill-track"><div class="skill-fill"></div></div></div>
+              <div class="skill-row" data-w="85"><span>Capcut</span><div class="skill-track"><div class="skill-fill"></div></div></div>
+              <div class="skill-row" data-w="62"><span>Adobe Lightroom</span><div class="skill-track"><div class="skill-fill"></div></div></div>
+              <div class="skill-row" data-w="55"><span>Adobe Photoshop</span><div class="skill-track"><div class="skill-fill"></div></div></div>
+              <div class="skill-row" data-w="88"><span>Adobe InDesign</span><div class="skill-track"><div class="skill-fill"></div></div></div>
+              <div class="skill-row" data-w="90"><span>Affinity Designer</span><div class="skill-track"><div class="skill-fill"></div></div></div>
+              <div class="skill-row" data-w="96"><span>Redação</span><div class="skill-track"><div class="skill-fill"></div></div></div>
+              <div class="skill-row" data-w="96"><span>Fotografia</span><div class="skill-track"><div class="skill-fill"></div></div></div>
+              <div class="skill-row" data-w="93"><span>Podcasting</span><div class="skill-track"><div class="skill-fill"></div></div></div>
+            </div>
+          </div>
+          <div class="profile-photo reveal">
+            <img src="assets/profile/mariana.png" alt="Mariana Nacashima">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 LOGOFOLIO -->
+  <section id="logofolio">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-num">01</span>
+        <h2 class="section-title">logofolio</h2>
+        <p class="section-sub">Identidade visual e branding — do rabisco ao monograma, marcas pensadas para causas, negócios e projetos pessoais.</p>
+      </div>
+    </div>
+    <div class="wrap" style="padding:0;max-width:1220px;">
+      <div class="logo-grid reveal">
+        <div class="logo-card">
+          <img src="assets/logos/logo_pedeque.jpg" alt="Pé de Quê?">
+          <span class="eyebrow cat">profissional</span>
+          <p class="name">Pé de Quê?</p>
+          <p class="desc">microempresa de rolinhos saudáveis de fruta</p>
+        </div>
+        <div class="logo-card">
+          <img src="assets/logos/logo_adoteame.jpg" alt="Projeto Adote & Ame">
+          <span class="eyebrow cat">profissional</span>
+          <p class="name">Projeto Adote &amp; Ame</p>
+          <p class="desc">projeto de adoção de pets</p>
+        </div>
+        <div class="logo-card">
+          <img src="assets/logos/logo_adventistas.jpg" alt="Adventistas Santa Isabel">
+          <span class="eyebrow cat">profissional</span>
+          <p class="name">Adventistas Santa Isabel</p>
+          <p class="desc">monograma para igreja</p>
+        </div>
+        <div class="logo-card">
+          <img src="assets/logos/logo_ecodrive.jpg" alt="Eco Drive">
+          <span class="eyebrow cat">acadêmico</span>
+          <p class="name">Eco Drive</p>
+          <p class="desc">campanha multiplataforma sobre carros elétricos</p>
+        </div>
+        <div class="logo-card">
+          <img src="assets/logos/logo_literatura.jpg" alt="Literatura em Movimento">
+          <span class="eyebrow cat">acadêmico</span>
+          <p class="name">Literatura em Movimento</p>
+          <p class="desc">campanha transmídia sobre literatura brasileira</p>
+        </div>
+        <div class="logo-card">
+          <img src="assets/logos/logo_yumi.jpg" alt="Yumi Gallery">
+          <span class="eyebrow cat">pessoal</span>
+          <p class="name">Yumi Gallery</p>
+          <p class="desc">marca pessoal para serviços de fotografia</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 SOCIAL MEDIA DESIGN -->
+  <section id="social">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-num">02</span>
+        <h2 class="section-title">social media design</h2>
+        <p class="section-sub">Estratégia, roteiro e design para Instagram e TikTok — de coberturas em tempo real a campanhas de causa.</p>
+      </div>
+
+      <div class="project reveal">
+        <div class="project-media">
+          <img src="assets/gallery/proj-copa-gabimartins.jpg" alt="Carrossel Copa do Mundo - @_gabimartins" loading="lazy">
+        </div>
+        <div class="project-text">
+          <span class="eyebrow cat">profissional</span>
+          <h3>Carrossel estratégico — Planejamento da cobertura da Copa</h3>
+          <p class="about-label">sobre</p>
+          <p>Desenvolvimento criativo e execução do design de um <b>carrossel informativo</b> (3 cards) para o Instagram da influenciadora <b>@_gabimartins</b>, apresentando o roteiro de jogos que seriam acompanhados durante a fase de grupos da Copa do Mundo.</p>
+          <p>O projeto foi pensado para comunicar as informações de forma clara, dinâmica e alinhada à identidade visual do perfil, utilizando uma linguagem esportiva e elementos gráficos que reforçassem a cobertura do evento.</p>
+          <div class="results">
+            <div><span class="num">2.646</span><span class="lbl">curtidas</span></div>
+            <div><span class="num">128</span><span class="lbl">comentários</span></div>
+            <div><span class="num">14</span><span class="lbl">republicações</span></div>
+            <div><span class="num">32</span><span class="lbl">compartilhamentos</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project reverse reveal">
+        <div class="project-media">
+          <img src="assets/gallery/proj-copa-julicostx.jpg" alt="Cobertura da Copa - @juli.costx" loading="lazy">
+        </div>
+        <div class="project-text">
+          <span class="eyebrow cat">profissional</span>
+          <h3>Produção de conteúdo — Jornalista na cobertura da Copa do Mundo</h3>
+          <p class="about-label">sobre</p>
+          <p>Produção de conteúdo para o Instagram e TikTok da <b>@juli.costx</b> durante a cobertura da Copa do Mundo de 2026. Edição de vídeos em formato de vlog, criação de peças para o feed e conteúdos visuais que acompanham a rotina da jornalista em tempo real nos Estados Unidos.</p>
+          <p>O objetivo é manter um fluxo consistente de publicações, fortalecer o perfil e aumentar o engajamento por meio de conteúdos informativos e de lifestyle.</p>
+          <div class="project-meta">
+            <div><p class="k">entregas</p><p class="v">Edição de vídeos (Reels e TikTok)</p></div>
+            <div><p class="k">&nbsp;</p><p class="v">Design para Instagram · Carrosséis</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project reveal">
+        <div class="project-media">
+          <img src="assets/gallery/proj-adote-ame.jpg" alt="Projeto Adote & Ame" loading="lazy">
+        </div>
+        <div class="project-text">
+          <span class="eyebrow cat">profissional</span>
+          <h3>Projeto Adote &amp; Ame</h3>
+          <p class="about-label">sobre</p>
+          <p>O <b>Projeto Adote &amp; Ame</b> surgiu de uma iniciativa em conjunto com a Secretaria de Meio Ambiente de Santa Isabel, com foco na adoção responsável de cães e gatos. Através do Instagram (<b>@projetoadote.ame</b>), realizei a criação da identidade visual, conteúdo estratégico e design para as redes sociais — cards, divulgação dos animais disponíveis e campanhas de conscientização.</p>
+          <p>O objetivo foi aproximar a população da causa animal por meio de uma comunicação visual acessível e engajadora.</p>
+          <div class="project-meta">
+            <div><p class="k">duração do projeto</p><p class="v">4 semanas / 2025</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project reverse reveal">
+        <div class="project-media">
+          <img src="assets/gallery/proj-eco-drive-ig.jpg" alt="Eco Drive - Instagram" loading="lazy">
+        </div>
+        <div class="project-text">
+          <span class="eyebrow cat">acadêmico</span>
+          <h3>Eco Drive</h3>
+          <p class="about-label">sobre</p>
+          <p>Campanha <b>multiplataforma</b> desenvolvida durante o 3º semestre da faculdade, focada na promoção de carros elétricos e energia limpa, alinhada à ODS 7. Criação da identidade visual, planejamento e design de conteúdos para Instagram e TikTok, além do roteiro do podcast Eco Cast (Spotify), edição das entrevistas para o YouTube e redação de matérias no Medium.</p>
+          <div class="project-meta">
+            <div><p class="k">duração do projeto</p><p class="v">4 meses / 2024</p></div>
+          </div>
+          <a class="btn-link" href="https://linktr.ee/eecodrive" target="_blank" rel="noopener">acessar todas as plataformas</a>
+        </div>
+      </div>
+
+      <div class="project reveal">
+        <div class="project-media">
+          <img src="assets/gallery/proj-literatura-ig.jpg" alt="Literatura em Movimento" loading="lazy">
+        </div>
+        <div class="project-text">
+          <span class="eyebrow cat">acadêmico</span>
+          <h3>Literatura em Movimento</h3>
+          <p class="about-label">sobre</p>
+          <p>Projeto <b>transmídia</b> criado em resposta ao tema "Tá com fome de quê?", com foco na valorização da literatura brasileira. Design dos posts com identidade visual própria no Instagram, chamadas para os episódios do podcast no Spotify e teaser da resenha em vídeo no YouTube. Direção de entrevistas do podcast e edição do vídeo resenha.</p>
+          <div class="project-meta">
+            <div><p class="k">duração do projeto</p><p class="v">4 meses / 2023</p></div>
+          </div>
+          <a class="btn-link" href="https://linktr.ee/literaturaemmovimento" target="_blank" rel="noopener">acessar todas as plataformas</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 TEXTO & ROTEIRO -->
+  <section id="texto">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-num">03</span>
+        <h2 class="section-title">texto &amp; roteiro</h2>
+        <p class="section-sub">Reportagem, redação editorial e roteirização — da pauta à publicação final.</p>
+      </div>
+
+      <div class="project reveal">
+        <div class="project-media plain">
+          <div style="background:var(--navy-card);border-radius:4px;padding:56px 40px;text-align:center;">
+            <p style="font-family:var(--serif);font-style:italic;color:var(--yellow);font-size:1.6rem;">Revista</p>
+            <p style="font-family:var(--serif);font-weight:700;color:#fff;font-size:2.2rem;">"Conexão Sustentável"</p>
+          </div>
+        </div>
+        <div class="project-text">
+          <span class="eyebrow cat">profissional</span>
+          <h3>Revista "Conexão Sustentável"</h3>
+          <p class="about-label">sobre</p>
+          <p>Produzida como material de encerramento da Semana do Meio Ambiente 2025, promovida pela Secretaria de Meio Ambiente de Santa Isabel. Participação em todo o processo editorial: pauta, redação e edição das matérias, organização do conteúdo em formato jornalístico, design da revista e fotografia.</p>
+          <div class="project-meta">
+            <div><p class="k">duração do projeto</p><p class="v">4 semanas / 2025</p></div>
+          </div>
+          <a class="btn-link" href="https://heyzine.com/flip-book/862977ea47.html" target="_blank" rel="noopener">acessar a revista digital</a>
+        </div>
+      </div>
+
+      <div class="project reverse reveal">
+        <div class="project-media">
+          <img src="assets/gallery/proj-revista-atlas.jpg" alt="Revista Atlas" loading="lazy">
+        </div>
+        <div class="project-text">
+          <span class="eyebrow cat">acadêmico</span>
+          <h3>Revista Atlas</h3>
+          <p class="about-label">sobre</p>
+          <p>Publicação de jornalismo especializado sobre turismo na cidade de Guararema. Concepção do projeto editorial e diagramação completa da revista — identidade visual, organização das informações, hierarquia tipográfica e composição gráfica de todas as páginas, além da produção da reportagem.</p>
+          <div class="project-meta">
+            <div><p class="k">duração do projeto</p><p class="v">3 meses / 2026</p></div>
+          </div>
+          <a class="btn-link" href="https://heyzine.com/flip-book/6a027f7d98.html" target="_blank" rel="noopener">acessar a revista digital</a>
+        </div>
+      </div>
+
+      <div class="project reveal">
+        <div class="project-media">
+          <img src="assets/gallery/proj-revista-eco.jpg" alt="Revista Eco+" loading="lazy">
+        </div>
+        <div class="project-text">
+          <span class="eyebrow cat">acadêmico</span>
+          <h3>Revista "Eco +"</h3>
+          <p class="about-label">sobre</p>
+          <p>Revista especial desenvolvida como projeto acadêmico na área de Informação e Projeto Gráfico, com foco em educação ambiental e políticas públicas. Responsável por todo o projeto gráfico, editoração, produção fotográfica e participação na redação das matérias sobre iniciativas sustentáveis em Santa Isabel.</p>
+          <div class="project-meta">
+            <div><p class="k">duração do projeto</p><p class="v">3 semanas / 2025</p></div>
+          </div>
+          <a class="btn-link" href="https://heyzine.com/flip-book/0c11f5bb88.html" target="_blank" rel="noopener">acessar a revista digital</a>
+        </div>
+      </div>
+
+      <div class="project reverse reveal">
+        <div class="project-media">
+          <img src="assets/gallery/proj-elas-no-jogo.jpg" alt="Elas no Jogo" loading="lazy">
+        </div>
+        <div class="project-text">
+          <span class="eyebrow cat">acadêmico</span>
+          <h3>Grande reportagem multimídia "Elas no Jogo"</h3>
+          <p class="about-label">sobre</p>
+          <p>Grande reportagem multimídia que investiga o espaço das mulheres no jornalismo esportivo — preconceito, assédio, machismo e representatividade. Pauta, estrutura narrativa, entrevistas, redação de 3 capítulos, roteiros para recursos audiovisuais e organização do design do site.</p>
+          <div class="project-meta">
+            <div><p class="k">duração do projeto</p><p class="v">4 meses / 2025</p></div>
+            <div><p class="k">disponível para</p><p class="v">mobile e computador</p></div>
+          </div>
+          <a class="btn-link" href="https://eelasnojogo.my.canva.site/" target="_blank" rel="noopener">ler a reportagem completa</a>
+        </div>
+      </div>
+
+      <div class="project reveal">
+        <div class="project-media plain">
+          <div style="background:var(--paper-2);border-radius:4px;padding:56px 40px;border:1px solid var(--line);">
+            <p class="eyebrow no-brackets" style="margin-bottom:10px;">Medium</p>
+            <p style="font-family:var(--serif);font-weight:700;font-style:italic;color:var(--navy);font-size:1.5rem;">"Políticas públicas estimulam aquisição de carros elétricos"</p>
+          </div>
+        </div>
+        <div class="project-text">
+          <span class="eyebrow cat">acadêmico</span>
+          <h3>Medium: carros elétricos e mobilidade sustentável</h3>
+          <p class="about-label">sobre</p>
+          <p>Como parte do projeto "Eco Drive", matéria jornalística publicada no Medium sobre o universo dos carros elétricos e a importância da transição para uma matriz energética limpa — iniciativas governamentais, incentivos fiscais, programas de subsídio e investimentos em infraestrutura de recarga.</p>
+          <div class="project-meta">
+            <div><p class="k">duração do projeto</p><p class="v">1 semana / 2024</p></div>
+          </div>
+          <a class="btn-link" href="https://medium.com/@ecodrive.electricars/pol%C3%ADticas-p%C3%BAblicas-estimulam-a-aquisi%C3%A7%C3%A3o-de-carros-el%C3%A9tricos-3a970ac3a3db" target="_blank" rel="noopener">ler a matéria completa</a>
+        </div>
+      </div>
+
+      <div class="project reverse reveal">
+        <div class="project-media plain">
+          <div style="background:var(--navy-card);border-radius:4px;padding:56px 40px;text-align:center;">
+            <p style="font-family:var(--serif);font-style:italic;color:var(--yellow);font-size:1.3rem;">roteiro</p>
+            <p style="font-family:var(--serif);font-weight:700;color:#fff;font-size:1.9rem;">Imigração Japonesa no Brasil</p>
+          </div>
+        </div>
+        <div class="project-text">
+          <span class="eyebrow cat">acadêmico</span>
+          <h3>Roteiro: reportagem "Imigração Japonesa no Brasil"</h3>
+          <p class="about-label">sobre</p>
+          <p>Roteiro para a reportagem em vídeo sobre os 115 anos da Imigração Japonesa no Brasil em 2023, produzida para o jornal da turma no 1º semestre da faculdade. Estruturado em formato de "espelho", definindo ordem das entradas, ganchos narrativos e transições. Atuação como repórter, conduzindo entrevistas.</p>
+          <div class="project-meta">
+            <div><p class="k">duração do projeto</p><p class="v">1 semana / 2023</p></div>
+          </div>
+          <a class="btn-link" href="https://drive.google.com/drive/folders/1wMcmS5XbvrH6h_I0aEO1KX-wHPn2RwoT" target="_blank" rel="noopener">conferir roteiro e plano de filmagem</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 FOTOGRAFIA -->
+  <section id="fotografia">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-num">04</span>
+        <h2 class="section-title">fotografia</h2>
+        <p class="section-sub">Produtos, retratos e cobertura de eventos — luz natural e direção de cena.</p>
+      </div>
+
+      <div class="photo-set reveal">
+        <div class="photo-set-head">
+          <h3>Evino Perdizes</h3>
+          <span class="eyebrow cat">profissional</span>
+        </div>
+        <div class="photo-grid">
+          <img class="wide" src="assets/gallery/evino-3.jpg" alt="Evino Perdizes" loading="lazy">
+          <img src="assets/gallery/evino-1.jpg" alt="Evino Perdizes" loading="lazy">
+          <img src="assets/gallery/evino-4.jpg" alt="Evino Perdizes" loading="lazy">
+          <img src="assets/gallery/evino-2.jpg" alt="Evino Perdizes" loading="lazy">
+          <img src="assets/gallery/evino-5.jpg" alt="Evino Perdizes" loading="lazy">
+          <img src="assets/gallery/evino-6.jpg" alt="Evino Perdizes" loading="lazy">
+          <img src="assets/gallery/evino-7.jpg" alt="Evino Perdizes" loading="lazy">
+        </div>
+      </div>
+
+      <div class="photo-set reveal">
+        <div class="photo-set-head">
+          <h3>Fotografia de produtos: Pé de Quê?</h3>
+          <span class="eyebrow cat">profissional</span>
+        </div>
+        <div class="photo-grid">
+          <img src="assets/gallery/pedeque-1.jpg" alt="Pé de Quê?" loading="lazy">
+          <img src="assets/gallery/pedeque-2.jpg" alt="Pé de Quê?" loading="lazy">
+          <img class="wide" src="assets/gallery/pedeque-9.jpg" alt="Pé de Quê?" loading="lazy">
+          <img src="assets/gallery/pedeque-6.jpg" alt="Pé de Quê?" loading="lazy">
+          <img src="assets/gallery/pedeque-3.jpg" alt="Pé de Quê?" loading="lazy">
+          <img src="assets/gallery/pedeque-4.jpg" alt="Pé de Quê?" loading="lazy">
+          <img src="assets/gallery/pedeque-7.jpg" alt="Pé de Quê?" loading="lazy">
+          <img src="assets/gallery/pedeque-8.jpg" alt="Pé de Quê?" loading="lazy">
+        </div>
+      </div>
+
+      <div class="photo-set reveal">
+        <div class="photo-set-head">
+          <h3>Retratos: 50 anos da Leila</h3>
+          <span class="eyebrow cat">profissional</span>
+        </div>
+        <div class="photo-grid">
+          <img src="assets/gallery/leila-1.jpg" alt="Retratos 50 anos da Leila" loading="lazy">
+          <img class="wide" src="assets/gallery/leila-2.jpg" alt="Retratos 50 anos da Leila" loading="lazy">
+          <img src="assets/gallery/leila-3.jpg" alt="Retratos 50 anos da Leila" loading="lazy">
+          <img src="assets/gallery/leila-4.jpg" alt="Retratos 50 anos da Leila" loading="lazy">
+          <img class="wide" src="assets/gallery/leila-5.jpg" alt="Retratos 50 anos da Leila" loading="lazy">
+        </div>
+      </div>
+
+      <div class="photo-set reveal">
+        <div class="photo-set-head">
+          <h3>Retratos: psicólogo André Serrano</h3>
+          <span class="eyebrow cat">profissional</span>
+        </div>
+        <div class="photo-grid">
+          <img src="assets/gallery/andre-1.jpg" alt="Retratos André Serrano" loading="lazy">
+          <img class="wide" src="assets/gallery/andre-2.jpg" alt="Retratos André Serrano" loading="lazy">
+          <img src="assets/gallery/andre-3.jpg" alt="Retratos André Serrano" loading="lazy">
+          <img src="assets/gallery/andre-4.jpg" alt="Retratos André Serrano" loading="lazy">
+          <img class="wide" src="assets/gallery/andre-5.jpg" alt="Retratos André Serrano" loading="lazy">
+        </div>
+      </div>
+
+      <div class="photo-set reveal">
+        <div class="photo-set-head">
+          <h3>Eventos: apresentação do João Lucas na igreja</h3>
+          <span class="eyebrow cat">profissional</span>
+        </div>
+        <div class="photo-grid">
+          <img class="square" src="assets/gallery/joaolucas-1.jpg" alt="Evento João Lucas" loading="lazy">
+          <img class="square" src="assets/gallery/joaolucas-2.jpg" alt="Evento João Lucas" loading="lazy">
+          <img class="square" src="assets/gallery/joaolucas-3.jpg" alt="Evento João Lucas" loading="lazy">
+          <img class="square" src="assets/gallery/joaolucas-4.jpg" alt="Evento João Lucas" loading="lazy">
+        </div>
+      </div>
+
+      <div class="photo-set reveal">
+        <div class="photo-set-head">
+          <h3>Eventos: Dia Mundial do Meio Ambiente 2025</h3>
+          <span class="eyebrow cat">profissional</span>
+        </div>
+        <div class="photo-grid">
+          <img src="assets/gallery/meioambiente-1.jpg" alt="Dia Mundial do Meio Ambiente" loading="lazy">
+          <img src="assets/gallery/meioambiente-2.jpg" alt="Dia Mundial do Meio Ambiente" loading="lazy">
+          <img src="assets/gallery/meioambiente-3.jpg" alt="Dia Mundial do Meio Ambiente" loading="lazy">
+          <img src="assets/gallery/meioambiente-4.jpg" alt="Dia Mundial do Meio Ambiente" loading="lazy">
+          <img src="assets/gallery/meioambiente-5.jpg" alt="Dia Mundial do Meio Ambiente" loading="lazy">
+          <img src="assets/gallery/meioambiente-6.jpg" alt="Dia Mundial do Meio Ambiente" loading="lazy">
+          <img src="assets/gallery/meioambiente-7.jpg" alt="Dia Mundial do Meio Ambiente" loading="lazy">
+          <img src="assets/gallery/meioambiente-8.jpg" alt="Dia Mundial do Meio Ambiente" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contato">
+    <h2>obrigada!</h2>
+    <p class="sub">vamos juntos?</p>
+    <div class="footer-links">
+      <a href="mailto:marinacashima@outlook.com">marinacashima@outlook.com</a>
+      <a href="https://www.linkedin.com/in/mariana-nacashima" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="footer-photo">
+      <img src="assets/profile/mariana.png" alt="Mariana Nacashima">
+    </div>
+    <p class="footer-credit">Portfólio 2026 · Mariana Nacashima</p>
+  </footer>
+
+</main>
+
+<script>
+  // mobile nav
+  const burger = document.getElementById('burger');
+  const navLinks = document.querySelector('.nav-links');
+  burger.addEventListener('click', () => {
+    const isOpen = navLinks.style.display === 'flex';
+    navLinks.style.cssText = isOpen ? '' : 'display:flex;position:fixed;top:60px;left:0;right:0;background:var(--paper);flex-direction:column;padding:26px 40px;gap:22px;border-bottom:1px solid var(--line);font-size:1.05rem;z-index:99;';
+  });
+  document.querySelectorAll('.nav-links a').forEach(a=>{
+    a.addEventListener('click', ()=>{ if(window.innerWidth<=980){ navLinks.style.display='none'; } });
+  });
+
+  // reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in-view'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.01, rootMargin:"0px 0px -2% 0px"});
+  revealEls.forEach(el=>io.observe(el));
+  // safety net: never leave content permanently invisible
+  setTimeout(()=>{ revealEls.forEach(el=>el.classList.add('in-view')); }, 2500);
+
+  // skill bars
+  const skillRows = document.querySelectorAll('.skill-row');
+  skillRows.forEach(row=>{
+    const fill = row.querySelector('.skill-fill');
+    fill.style.transform = 'scaleX(0)';
+    row.dataset.set = row.dataset.w;
+  });
+  const skillObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const row = e.target;
+        const fill = row.querySelector('.skill-fill');
+        fill.style.transformOrigin='left';
+        fill.style.transition='transform 1.1s cubic-bezier(.16,.84,.44,1)';
+        fill.style.transform = `scaleX(${row.dataset.w/100})`;
+        skillObserver.unobserve(row);
+      }
+    });
+  }, {threshold:0.4});
+  skillRows.forEach(r=>skillObserver.observe(r));
+
+  // lightbox for photography grids
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  document.querySelectorAll('.photo-grid img').forEach(img=>{
+    img.addEventListener('click', ()=>{
+      lightboxImg.src = img.src;
+      lightbox.classList.add('active');
+    });
+  });
+  document.getElementById('lightboxClose').addEventListener('click', ()=> lightbox.classList.remove('active'));
+  lightbox.addEventListener('click', (e)=>{ if(e.target===lightbox) lightbox.classList.remove('active'); });
+
+  // hide nav on scroll down, show on scroll up
+  let lastY = window.scrollY;
+  const navEl = document.querySelector('header.nav');
+  window.addEventListener('scroll', ()=>{
+    const y = window.scrollY;
+    if(y > lastY && y > 200){ navEl.style.transform = 'translateY(-100%)'; }
+    else{ navEl.style.transform = 'translateY(0)'; }
+    lastY = y;
+  });
+</script>
+
+</body>
+</html>
