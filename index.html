@@ -309,6 +309,8 @@
     box-shadow:0 30px 60px -20px rgba(20,40,66,0.28);
   }
   .project-media.plain img{box-shadow:none;border-radius:2px;}
+  .project-media.duo{display:flex;align-items:flex-end;gap:18px;}
+  .project-media.duo img{width:calc(50% - 9px);}
   .project-text .cat{margin-bottom:14px;}
   .project-text h3{
     font-size:clamp(1.6rem,3vw,2.3rem);
@@ -462,6 +464,10 @@
     .photo-grid .wide{grid-column:span 2;}
     .profile-photo{justify-content:center;}
     section{padding:80px 0;}
+  }
+  @media (max-width:640px){
+    .project-media.duo{flex-direction:column;align-items:stretch;}
+    .project-media.duo img{width:100%;}
   }
   @media (max-width:560px){
     .hero-top{flex-direction:column;gap:14px;}
@@ -755,8 +761,9 @@
       </div>
 
       <div class="project reverse reveal">
-        <div class="project-media">
-          <img src="assets/gallery/gallery/17. Revista Atlas capa.png" alt="Revista Atlas" loading="lazy">
+        <div class="project-media duo">
+          <img src="assets/gallery/gallery/revista-atlas-capa.png" alt="Revista Atlas - capa" loading="lazy">
+          <img src="assets/gallery/gallery/revista-atlas-paginas.png" alt="Revista Atlas - páginas abertas" loading="lazy">
         </div>
         <div class="project-text">
           <span class="eyebrow cat">acadêmico</span>
@@ -771,8 +778,9 @@
       </div>
 
       <div class="project reveal">
-        <div class="project-media">
-          <img src="assets/gallery/gallery/20. Revista Eco páginas.png" alt="Revista Eco+" loading="lazy">
+        <div class="project-media duo">
+          <img src="assets/gallery/gallery/revista-eco-capa.png" alt="Revista Eco+ - capa" loading="lazy">
+          <img src="assets/gallery/gallery/revista-eco-paginas-v2.png" alt="Revista Eco+ - páginas abertas" loading="lazy">
         </div>
         <div class="project-text">
           <span class="eyebrow cat">acadêmico</span>
